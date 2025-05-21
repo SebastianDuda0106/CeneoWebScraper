@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{product_id}}
+    {{product_id}} - {{product_name}}
 {% endblock %}
 
 {% block content %}
+    {{opinions|safe}}
+{% endblock %}
+
+{% block script %}
+<script>
+    let table = new DataTable('#opinions',{
+        //options
+        scrollY: '550px',
+        paging: false,
+    });
+</script>
 {% endblock %}
