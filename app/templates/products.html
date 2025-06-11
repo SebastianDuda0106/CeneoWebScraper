@@ -14,9 +14,9 @@ Lista produktów
                 <span class="badge bg-success rounded-pill">{{product.pros_count}}</span>
                 <span class="badge bg-danger rounded-pill">{{product.cons_count}}</span>
                 <span class="badge bg-ceneo rounded-pill">{{product.average_stars|round(2)}}</span>
-                <a type="button" class="btn btn-info" href="#">CSV</a>
-                <a type="button" class="btn btn-info" href="#">XLSX</a>
-                <a type="button" class="btn btn-info" href="#">JSON</a>
+                <a type="button" class="btn btn-info" href="{{url_for('download_csv',product_id=product.product_id)}}" download>CSV</a>
+                <a type="button" class="btn btn-info" href="{{url_for('download_xlsx',product_id=product.product_id)}}" download>XLSX</a>
+                <a type="button" class="btn btn-info" href="{{url_for('download_json',product_id=product.product_id)}}" download>JSON</a>
             </li>
         {% endfor %}
     </ul>
